@@ -35,6 +35,7 @@ body {
   font-family: 'Outfit', sans-serif;
   background: var(--bg); color: var(--tx);
   overflow-x: hidden; line-height: 1.65;
+  overflow-wrap: break-word;
 }
 
 /* Кастомный скроллбар */
@@ -564,7 +565,8 @@ section.sec { padding: 110px 0; }
 }
 
 @media (max-width: 480px) {
-  .btn-xl { width: 100%; min-width: unset; padding: 20px 32px; }
+  .btn-xl { width: 100%; min-width: unset; padding: 18px 24px; gap: 10px; }
+  .btn-xl svg { width: 22px; height: 22px; }
   .contact-sub { font-size: 14px; }
 }
 
@@ -636,7 +638,10 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .faq-q        { padding: 18px 20px; }
   .faq-item.open .faq-a { padding: 0 20px 20px; }
-  .btn-xl       { padding: 18px 32px; font-size: 19px; }
+  .btn-xl       { font-size: 19px; }
+  .st           { line-height: 1.18; }
+  .pr-title     { line-height: 1.1; }
+  .hero-badge   { font-size: 12px; padding: 6px 14px 6px 9px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -701,14 +706,14 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
       <div class="hero-content">
         <div class="hero-badge">
           <span class="pdot" aria-hidden="true"></span>
-          Media Buyer · iGaming · Facebook
+          Media Buyer&nbsp;· iGaming&nbsp;· Facebook
         </div>
         <h1 class="hero-name" id="hero-heading">
           Федосеев<br><span class="g-txt">Глеб</span>
         </h1>
         <p class="hero-role">
-          Начинающий медиабаер с бэкграундом в беттинге, продажах
-          и управлении онлайн-сообществами.
+          Начинающий медиабаер с&nbsp;бэкграундом в&nbsp;беттинге, продажах
+          и&nbsp;управлении онлайн-сообществами.
         </p>
         <div class="hero-actions">
           <a href="https://t.me/d2mch" target="_blank" rel="noopener" class="btn-p" aria-label="Написать в Telegram">
@@ -765,7 +770,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
     </div>
 
     <div class="path-reveal reveal" aria-label="Ключевой момент">
-      <p class="pr-pre">Но параллельно я всегда был в поиске работы,<br>где смогу реализовать свой потенциал на 100%...</p>
+      <p class="pr-pre">Но параллельно я&nbsp;всегда был в&nbsp;поиске работы,<br>где смогу реализовать свой потенциал на&nbsp;100%...</p>
       <div class="pr-title">...и кажется <span class="g-txt">нашёл.</span></div>
       <p class="pr-sub">Арбитраж трафика — <span class="g-txt">пазл сложился.</span></p>
     </div>
@@ -830,15 +835,15 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 13V9m3 4V7m3 6V10m3 3V8"/></svg></div>
-          <div><div class="sk-name">Настройка и ведение кампаний FB</div><div class="sk-note">Собрал с нуля рабочую связку на Африку.</div></div>
+          <div><div class="sk-name">Настройка и ведение кампаний&nbsp;FB</div><div class="sk-note">Собрал с&nbsp;нуля рабочую связку на&nbsp;Африку.</div></div>
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div><div class="sk-name">Английский язык — B2</div><div class="sk-note">Использую для общения и поиска информации по западным источникам.</div></div>
+          <div><div class="sk-name">Английский язык —&nbsp;B2</div><div class="sk-note">Использую для&nbsp;общения и&nbsp;поиска информации по&nbsp;западным источникам.</div></div>
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
-          <div><div class="sk-name">Уверенное владение ИИ</div><div class="sk-note">Создание креативов, генерация идей — юзаю ИИ ежедневно.</div></div>
+          <div><div class="sk-name">Уверенное владение&nbsp;ИИ</div><div class="sk-note">Создание креативов, генерация идей — юзаю&nbsp;ИИ ежедневно.</div></div>
         </div>
       </div>
       <!-- SOFT -->
@@ -921,7 +926,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         <div class="goal-num" id="goalNum" aria-label="1500 долларов в месяц и более">$1500+</div>
         <div class="goal-yr">в месяц</div>
       </div>
-      <p class="goal-desc">Сделать медиабаинг основным источником дохода и выйти на <b>стабильный ежемесячный доход от $1500+</b></p>
+      <p class="goal-desc">Сделать медиабаинг основным источником дохода и&nbsp;выйти на&nbsp;<b>стабильный ежемесячный доход от&nbsp;$1500+</b></p>
     </div>
   </div>
 </section>
@@ -933,7 +938,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   <div class="ctr">
     <div class="contact-wrap">
       <h2 class="contact-title" id="contact-heading">КОНТАКТ<br><span class="g-txt">ДЛЯ СВЯЗИ</span></h2>
-      <p class="contact-sub">Открыт для сотрудничества — пишите напрямую в Telegram</p>
+      <p class="contact-sub">Открыт для сотрудничества — пишите напрямую в&nbsp;Telegram</p>
       <a href="https://t.me/d2mch" target="_blank" rel="noopener" class="btn-xl" id="contactBtn" aria-label="Написать Глебу в Telegram @d2mch" data-tooltip="Клик — и окажешься в Telegram">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.01 9.474c-.146.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.16 14.4l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.13.656.186z"/></svg>
         Связаться со мной
