@@ -558,8 +558,8 @@ section.sec { padding: 110px 0; }
 }
 
 @media (max-width: 480px) {
-  .btn-xl { width: 100%; min-width: unset; padding: 18px 24px; gap: 10px; }
-  .btn-xl svg { width: 22px; height: 22px; }
+  .btn-xl { width: 100%; min-width: unset; padding: 15px 24px; gap: 10px; }
+  .btn-xl svg { width: 26px; height: 26px; }
   .contact-sub { font-size: 14px; }
 }
 
@@ -631,12 +631,60 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   .hero-name    { font-size: clamp(38px, 12vw, 62px); letter-spacing: -2px; line-height: 1.05; }
   .honest-block { grid-template-columns: 1fr; grid-template-areas: "main" "video" "promise"; gap: 24px; padding: 28px 24px; }
   .honest-main, .honest-point--confident { max-width: none; }
+  .honest-main {
+    display: flex; flex-direction: column; justify-content: center;
+    min-height: 180px;
+  }
+  .honest-title {
+    font-size: clamp(22px, 7vw, 28px);
+    font-weight: 900;
+    text-shadow: 0 0 22px rgba(0,230,118,.4);
+    text-wrap: balance;
+    position: relative;
+    padding-bottom: 16px;
+  }
+  .honest-title::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 56px; height: 3px; border-radius: 2px;
+    background: var(--grad);
+  }
+  .honest-point { color: #b9d2c8; line-height: 2.05; }
   .skills-grid  { grid-template-columns: 1fr; }
   .faq-a p      { text-wrap: wrap; }
   .hero-role    { line-height: 1.5; letter-spacing: -.1px; }
   .hero-role .hr-break { display: block; }
   .tl-desc      { text-wrap: wrap; }
   .why-lead, .sk-note, .honest-point--confident { text-wrap: wrap; }
+  .why-lead { color: #b9d2c8; }
+}
+@media (max-width: 600px) {
+  .sk-main-title {
+    font-size: clamp(30px, 10vw, 40px);
+    line-height: 1.08;
+    margin-bottom: 36px;
+  }
+  .honest-title {
+    font-size: clamp(15px, 4.5vw, 18px);
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-shadow: 0 0 12px rgba(0,230,118,.25);
+    padding-bottom: 10px;
+  }
+  .honest-title::after { width: 40px; height: 2px; }
+  .honest-point {
+    max-width: 30ch;
+    line-height: 1.9;
+    word-spacing: .5px;
+    text-wrap: pretty;
+  }
+  .sk-note--tilt { text-wrap: pretty; }
+  .faq-a--salary { text-wrap: balance; }
+  .tl-desc--univ { text-wrap: pretty; }
+  .why-lead {
+    padding: 0 6px;
+    margin-top: 6px;
+  }
+  #why .st { margin-bottom: 26px; }
 }
 @media (max-width: 480px) {
   .ctr          { padding: 0 16px; }
@@ -646,7 +694,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .faq-q        { padding: 18px 20px; }
   .faq-item.open .faq-a { padding: 0 20px 20px; }
-  .btn-xl       { font-size: 19px; }
+  .btn-xl       { font-size: 21px; }
   .st           { line-height: 1.18; }
   .pr-title     { line-height: 1.1; }
   .hero-badge   { font-size: 12px; padding: 6px 14px 6px 9px; }
@@ -770,13 +818,13 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         <div class="tl-dot" aria-hidden="true"></div>
         <div class="tl-stage">Школа</div>
         <div class="tl-title">Админ в крупной сетке ВК пабликов по ставкам на киберспорт</div>
-        <p class="tl-desc">С 7 до 11 класса параллельно учёбе администрировал крупнейшую сеть ВК пабликов по ставкам на киберспорт: контент, рекламные посты, общение с клиентами&nbsp;&mdash;&nbsp;всё делал самостоятельно.</p>
+        <p class="tl-desc">С 7 по 11 класс, помимо учёбы, я админил крупную сеть VK-пабликов по ставкам на киберспорт: занимался контентом, рекламой и общением с клиентами самостоятельно.</p>
       </div>
       <div class="tl-item reveal d2" role="listitem">
         <div class="tl-dot" aria-hidden="true"></div>
         <div class="tl-stage">Университет</div>
         <div class="tl-title">Сознательный отказ в пользу саморазвития</div>
-        <p class="tl-desc">Сдал ЕГЭ на высокие баллы, поступил на бюджет в РАНХиГС, но уже после первого курса убедился: всё, что там дают&nbsp;&mdash;&nbsp;бесполезная теория, не связанная с реальностью. Решил не терять время, сделал ставку на саморазвитие и отчислился по собственному желанию.</p>
+        <p class="tl-desc tl-desc--univ">Сдал ЕГЭ, поступил на бюджет в РАНХиГС. Уже на первом курсе понял, что нас учат только бесполезной теории, далёкой от реальности. Сделал ставку на саморазвитие и ушёл по собственному желанию.</p>
       </div>
       <div class="tl-item reveal d3" role="listitem">
         <div class="tl-dot" aria-hidden="true"></div>
@@ -820,7 +868,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         <div class="honest-title">ДАВАЙТЕ НАЧИСТОТУ</div>
         <div class="honest-points">
           <div class="honest-point">
-            Уверен, вас уже тошнит от клишированных резюме со сказками про целеустремлённость, ответственность (которые исчезают при решении первой же задачи)
+            Уверен, вас уже тошнит от банальных резюме с бесконечными рассказами про целеустремлённость и ответственность
           </div>
         </div>
       </div>
@@ -831,7 +879,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         </video>
       </div>
       <div class="honest-point honest-point--confident">
-        <span class="honest-promise">Ниже&nbsp;&mdash;&nbsp;мой РЕАЛЬНЫЙ набор хард и софт скиллов.</span>
+        <span class="honest-promise">Ниже&nbsp;&mdash;&nbsp;мой РЕАЛЬНЫЙ набор скиллов</span>
       </div>
     </div>
 
@@ -869,7 +917,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <div><div class="sk-name">Психологическая броня</div><div class="sk-note">Многолетний опыт ставок и игры в доту на высоком рейтинге выработали иммунитет к тильту :)</div></div>
+          <div><div class="sk-name">Психологическая броня</div><div class="sk-note sk-note--tilt">Многолетний опыт ставок и игры в доту на высоком рейтинге выработали иммунитет к&nbsp;тильту&nbsp;:)</div></div>
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
@@ -913,7 +961,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
           <span class="faq-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
         </button>
         <div class="faq-a" role="region">
-          <p>Условия обсуждаемы. Хочу, чтобы мой доход был напрямую связан с результатом&nbsp;&mdash;&nbsp;процент или гибридная схема мне подходят. Сейчас в приоритете&nbsp;&mdash;&nbsp;набраться опыта и вырасти в профессии.</p>
+          <p class="faq-a--salary">Условия обсуждаемы. Интересует доход, напрямую зависящий от результата (процент&nbsp;или&nbsp;гибрид). Приоритет&nbsp;&mdash;&nbsp;опыт и профессиональный рост.</p>
         </div>
       </div>
       <div class="faq-item" role="listitem">
@@ -952,7 +1000,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   <div class="ctr">
     <div class="contact-wrap">
       <h2 class="contact-title" id="contact-heading">КОНТАКТ<br><span class="g-txt">ДЛЯ СВЯЗИ</span></h2>
-      <p class="contact-sub">Открыт для сотрудничества&nbsp;&mdash;&nbsp;пишите напрямую в&nbsp;Telegram</p>
+      <p class="contact-sub">Открыт к сотрудничеству&nbsp;&mdash;&nbsp;пишите в&nbsp;TG</p>
       <a href="https://t.me/d2mch" target="_blank" rel="noopener" class="btn-xl" id="contactBtn" aria-label="Написать Глебу в Telegram @d2mch" data-tooltip="Клик — и окажешься в Telegram">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.01 9.474c-.146.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.16 14.4l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.13.656.186z"/></svg>
         Связаться со мной
