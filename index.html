@@ -251,8 +251,9 @@ body::after {
 
 .hero-name {
   font-family: 'Unbounded', sans-serif;
-  font-size: clamp(48px, 7.5vw, 92px); font-weight: 900;
+  font-size: clamp(48px, 6.5vw, 80px); font-weight: 900;
   line-height: .88; letter-spacing: -3px; margin-bottom: 18px;
+  overflow-wrap: normal; word-break: keep-all;
   opacity: 0; animation: fadeUp .8s .35s var(--spring) both;
 }
 .g-txt {
@@ -377,7 +378,7 @@ section.sec { padding: 110px 0; }
   transition: color .2s;
 }
 .tl-item:hover .tl-title { color: var(--g); }
-.tl-desc { font-size: 15.5px; color: var(--ml); line-height: 1.75; max-width: 620px; }
+.tl-desc { font-size: 15.5px; color: var(--ml); line-height: 1.75; max-width: 580px; text-wrap: balance; }
 
 .path-reveal { margin-top: 80px; padding: 64px 0; text-align: center; position: relative; }
 .path-reveal::before {
@@ -388,7 +389,7 @@ section.sec { padding: 110px 0; }
   content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
   width: 1px; height: 52px; background: linear-gradient(to top, transparent, var(--g));
 }
-.pr-pre   { font-size: 15px; color: var(--mu); line-height: 1.8; max-width: 560px; margin: 0 auto 24px; font-style: italic; }
+.pr-pre   { font-size: 15px; color: var(--ml); line-height: 1.8; max-width: 560px; margin: 0 auto 24px; letter-spacing: .2px; }
 .pr-title { font-family: 'Unbounded', sans-serif; font-size: clamp(32px, 5.5vw, 72px); font-weight: 900; letter-spacing: -2.5px; line-height: .95; margin-bottom: 16px; }
 .pr-sub   { font-size: 17px; color: var(--tx); font-weight: 500; max-width: 440px; margin: 0 auto; }
 
@@ -397,31 +398,10 @@ section.sec { padding: 110px 0; }
   background: linear-gradient(to bottom, var(--s1), var(--bg));
   border-top: 1px solid var(--b1); border-bottom: 1px solid var(--b1);
 }
-.why-grid { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; }
-.why-arrow {
-  font-family: 'Unbounded', sans-serif; font-size: clamp(80px, 13vw, 170px);
-  font-weight: 900; line-height: .85;
-  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  filter: drop-shadow(0 0 36px rgba(0,230,118,.22));
-  transition: filter .4s, transform .5s var(--spring);
-  user-select: none;
-}
-.why-grid:hover .why-arrow { filter: drop-shadow(0 0 56px rgba(0,230,118,.5)); transform: rotate(-5deg) scale(1.04); }
-.why-body .st { margin-bottom: 20px; }
-.why-body p   { font-size: 17px; color: var(--ml); max-width: 500px; line-height: 1.8; }
-.why-lead     { margin-top: 12px; font-size: 18px; color: var(--tx); font-weight: 500; max-width: 520px; line-height: 1.65; }
+.why-grid { position: relative; }
+#why .st     { margin-bottom: 20px; }
+.why-lead    { position: relative; z-index: 1; font-size: 18px; color: var(--tx); font-weight: 500; max-width: 520px; line-height: 1.65; text-wrap: balance; }
 .why-lead .g-txt { font-weight: 700; }
-.why-body .eyebrow { margin-bottom: 18px; }
-.why-q {
-  display: inline-block; margin-left: 4px;
-  background: var(--grad);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  animation: qPulse 3.4s ease-in-out infinite;
-}
-@keyframes qPulse {
-  0%, 100% { filter: drop-shadow(0 0 0 rgba(0,230,118,0)); transform: rotate(-8deg) scale(1); }
-  50%      { filter: drop-shadow(0 0 16px rgba(0,230,118,.55)); transform: rotate(-8deg) scale(1.12); }
-}
 
 /* ── НАВЫКИ ──────────────────────────────────── */
 .sk-main-title {
@@ -442,7 +422,7 @@ section.sec { padding: 110px 0; }
 .honest-title { font-family: 'Unbounded', sans-serif; font-size: clamp(15px, 2vw, 20px); font-weight: 800; color: var(--tx); letter-spacing: -.3px; margin-bottom: 24px; line-height: 1.2; }
 .honest-main { grid-area: main; max-width: 520px; }
 .honest-points { display: flex; flex-direction: column; gap: 20px; max-width: 520px; }
-.honest-point { font-size: 15px; line-height: 1.6; color: var(--ml); }
+.honest-point { font-size: 15px; line-height: 1.75; color: var(--ml); text-wrap: balance; }
 .honest-point--confident { grid-area: promise; color: var(--tx); max-width: 520px; align-self: start; }
 .honest-promise {
   display: block; margin-top: 10px;
@@ -474,8 +454,8 @@ section.sec { padding: 110px 0; }
 .sk-item:hover .sk-icon { background: rgba(0,230,118,.16); box-shadow: 0 0 14px rgba(0,230,118,.22); }
 .sk-icon svg { width: 17px; height: 17px; }
 
-.sk-name { font-size: 14.5px; font-weight: 600; color: var(--tx); margin-bottom: 3px; }
-.sk-note { font-size: 13px; color: var(--mu); line-height: 1.55; }
+.sk-name { font-size: 16px; font-weight: 600; color: var(--tx); margin-bottom: 4px; }
+.sk-note { font-size: 14.5px; color: var(--ml); line-height: 1.6; text-wrap: balance; }
 .sk-proof {
   display: inline-flex; align-items: center; gap: 4px;
   font-size: 11px; color: var(--g); font-weight: 600;
@@ -621,9 +601,6 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
 }
 
 /* ── АДАПТИВ ─────────────────────────────────── */
-@media (max-width: 1024px) {
-  .why-grid   { gap: 36px; }
-}
 @media (max-width: 880px) {
   .ctr          { padding: 0 22px; }
   .nav-links    { display: none; }
@@ -635,8 +612,6 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   .hero-photo-col { order: -1; animation: none !important; opacity: 1 !important; }
   .hero-photo-wrap { max-width: 200px; margin: 0 auto; }
   .hero-name    { font-size: clamp(38px, 12vw, 62px); letter-spacing: -2px; }
-  .why-grid     { grid-template-columns: 1fr; gap: 8px; }
-  .why-arrow    { font-size: 88px; }
   .honest-block { grid-template-columns: 1fr; grid-template-areas: "main" "video" "promise"; gap: 24px; padding: 28px 24px; }
   .honest-main, .honest-point--confident { max-width: none; }
   .skills-grid  { grid-template-columns: 1fr; }
@@ -794,12 +769,8 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
 <section class="sec pw reveal" id="why" aria-labelledby="why-heading">
   <div class="ctr">
     <div class="why-grid">
-      <div class="why-arrow" aria-hidden="true">→</div>
-      <div class="why-body">
-        <div class="eyebrow">Вопрос самому себе</div>
-        <h2 class="st" id="why-heading">Почему именно арбитраж<span class="why-q">?</span></h2>
-        <p class="why-lead">Деньги, свобода, крутое комьюнити — это конечно приятно. Но главный момент для меня — это самореализация. Уверен, что благодаря опытному тимлиду быстро стану <span class="g-txt">сильным медиабаером.</span></p>
-      </div>
+      <h2 class="st" id="why-heading">Почему именно <span class="g-txt">арбитраж?</span></h2>
+      <p class="why-lead">Деньги, свобода, крутое комьюнити — это конечно приятно. Но главный момент для меня — это самореализация. Уверен, что благодаря опытному тимлиду быстро стану <span class="g-txt">сильным медиабаером.</span></p>
     </div>
   </div>
 </section>
