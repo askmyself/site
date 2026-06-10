@@ -266,6 +266,7 @@ body::after {
   font-weight: 500; line-height: 1.7; max-width: 500px; margin-bottom: 40px;
   opacity: 0; animation: fadeUp .72s .55s ease both;
 }
+.hero-role .hr-break { display: none; }
 
 .hero-motto {
   background: var(--s1); border: 1px solid var(--b1); border-left: 3px solid var(--g);
@@ -611,12 +612,12 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   .hero-grid    { grid-template-columns: 1fr; padding: 28px 0 56px; min-height: unset; gap: 32px; }
   .hero-photo-col { order: -1; animation: none !important; opacity: 1 !important; }
   .hero-photo-wrap { max-width: 200px; margin: 0 auto; }
-  .hero-name    { font-size: clamp(38px, 12vw, 62px); letter-spacing: -2px; }
+  .hero-name    { font-size: clamp(38px, 12vw, 62px); letter-spacing: -2px; line-height: 1.05; }
   .honest-block { grid-template-columns: 1fr; grid-template-areas: "main" "video" "promise"; gap: 24px; padding: 28px 24px; }
   .honest-main, .honest-point--confident { max-width: none; }
   .skills-grid  { grid-template-columns: 1fr; }
-  .hero-role    { text-wrap: balance; }
   .faq-a p      { text-wrap: balance; }
+  .hero-role .hr-break { display: block; }
 }
 @media (max-width: 480px) {
   .ctr          { padding: 0 16px; }
@@ -700,8 +701,9 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
           Федосеев<br><span class="g-txt">Глеб</span>
         </h1>
         <p class="hero-role">
-          Начинающий медиабаер с&nbsp;бэкграундом в&nbsp;беттинге, продажах
-          и&nbsp;управлении онлайн-сообществами.
+          Начинающий медиабаер с&nbsp;бэкграундом<br class="hr-break">
+          в&nbsp;беттинге, продажах и&nbsp;управлении<br class="hr-break">
+          онлайн-сообществами.
         </p>
         <div class="hero-actions">
           <a href="https://t.me/d2mch" target="_blank" rel="noopener" class="btn-p" aria-label="Написать в Telegram">
