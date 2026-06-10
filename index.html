@@ -610,18 +610,23 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   section.sec   { padding: 80px 0; }
   #contact      { padding: 96px 0; }
   .sk-main-title { margin-bottom: 28px; }
-  .hero-grid    { grid-template-columns: 1fr; padding: 28px 0 56px; min-height: unset; gap: 20px; }
+  .hero-grid    { grid-template-columns: 1fr; padding: 28px 0 56px; min-height: unset; gap: 24px; }
   .hero-photo-col { order: -1; animation: none !important; opacity: 1 !important; }
-  .hero-photo-wrap { max-width: 300px; margin: 0 auto 28px; }
+  .hero-photo-wrap { max-width: 300px; margin: 0 auto; }
   .hero-content > .hero-badge { display: none; }
   .hero-photo-ring .hero-badge--photo {
-    display: inline-flex; position: absolute; z-index: 2;
-    left: 50%; bottom: 0; transform: translate(-50%, 50%);
-    white-space: nowrap; font-weight: 600;
-    font-size: 12px; padding: 10px 18px 10px 13px;
-    background: var(--bg); border: 1px solid var(--b1);
-    box-shadow: 0 12px 32px rgba(0,230,118,.2), 0 8px 24px rgba(0,0,0,.5);
+    display: flex; position: absolute; z-index: 2;
+    left: 22px; right: 22px; bottom: 22px;
+    align-items: center; gap: 12px;
+    text-align: left; line-height: 1.5;
+    font-size: 14.5px; font-weight: 600; margin: 0;
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: rgba(4,10,7,.62); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(0,230,118,.28);
+    box-shadow: 0 10px 28px rgba(0,0,0,.4);
   }
+  .hero-photo-ring .hero-badge--photo .pdot { flex-shrink: 0; }
   .hero-name    { font-size: clamp(38px, 12vw, 62px); letter-spacing: -2px; line-height: 1.05; }
   .honest-block { grid-template-columns: 1fr; grid-template-areas: "main" "video" "promise"; gap: 24px; padding: 28px 24px; }
   .honest-main, .honest-point--confident { max-width: none; }
@@ -733,7 +738,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
             <img src="photo.webp" alt="" class="hero-photo-img">
             <div class="hero-badge hero-badge--photo">
               <span class="pdot" aria-hidden="true"></span>
-              Media Buyer&nbsp;· iGaming&nbsp;· Facebook
+              <span>Media Buyer<br>iGaming&nbsp;· Facebook</span>
             </div>
           </div>
           <div class="hero-photo-glow"></div>
