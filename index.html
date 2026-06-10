@@ -223,6 +223,7 @@ body::after {
   background: linear-gradient(to top, var(--bg) 5%, transparent);
   pointer-events: none;
 }
+.hero-badge--photo { display: none; }
 .hero-photo-glow {
   position: absolute; bottom: -48px; left: 50%;
   transform: translateX(-50%);
@@ -609,9 +610,17 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   section.sec   { padding: 80px 0; }
   #contact      { padding: 96px 0; }
   .sk-main-title { margin-bottom: 28px; }
-  .hero-grid    { grid-template-columns: 1fr; padding: 28px 0 56px; min-height: unset; gap: 32px; }
+  .hero-grid    { grid-template-columns: 1fr; padding: 28px 0 56px; min-height: unset; gap: 24px; }
   .hero-photo-col { order: -1; animation: none !important; opacity: 1 !important; }
-  .hero-photo-wrap { max-width: 200px; margin: 0 auto; }
+  .hero-photo-wrap { max-width: 280px; margin: 0 auto; }
+  .hero-content > .hero-badge { display: none; }
+  .hero-badge--photo {
+    display: inline-flex; position: absolute; z-index: 2;
+    left: 14px; right: 14px; bottom: 16px; margin: 0;
+    justify-content: center; white-space: nowrap;
+    font-size: 11.5px; padding: 7px 12px 7px 9px;
+    background: rgba(4,10,7,.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  }
   .hero-name    { font-size: clamp(38px, 12vw, 62px); letter-spacing: -2px; line-height: 1.05; }
   .honest-block { grid-template-columns: 1fr; grid-template-areas: "main" "video" "promise"; gap: 24px; padding: 28px 24px; }
   .honest-main, .honest-point--confident { max-width: none; }
@@ -721,6 +730,10 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         <div class="hero-photo-wrap">
           <div class="hero-photo-ring">
             <img src="photo.webp" alt="" class="hero-photo-img">
+            <div class="hero-badge hero-badge--photo">
+              <span class="pdot" aria-hidden="true"></span>
+              Media Buyer&nbsp;· iGaming&nbsp;· Facebook
+            </div>
           </div>
           <div class="hero-photo-glow"></div>
         </div>
