@@ -223,7 +223,7 @@ body::after {
   background: linear-gradient(to top, var(--bg) 5%, transparent);
   pointer-events: none;
 }
-.hero-badge--photo { display: none; }
+.hero-photo-ring .hero-badge--photo { display: none; }
 .hero-photo-glow {
   position: absolute; bottom: -48px; left: 50%;
   transform: translateX(-50%);
@@ -339,48 +339,9 @@ section.sec { padding: 110px 0; }
 .ssub { font-size: 16px; color: var(--ml); max-width: 540px; line-height: 1.8; }
 .divl { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--b1), transparent); }
 
-/* ── ПУТЬ / TIMELINE ─────────────────────────── */
+/* ── ПУТЬ / БЭКГРАУНД ────────────────────────── */
 #path .sec-head { max-width: 780px; margin-bottom: 72px; }
 #path .ssub     { max-width: 600px; }
-
-.timeline { position: relative; padding-left: 36px; margin-top: 8px; }
-.timeline::before {
-  content: ''; position: absolute; left: 9px; top: 14px; bottom: 14px; width: 2px;
-  background: linear-gradient(to bottom, var(--g), var(--g2) 60%, transparent);
-  transform-origin: top; transform: scaleY(0);
-  transition: transform 1.4s var(--spring);
-}
-.timeline.line-vis::before { transform: scaleY(1); }
-
-.tl-item { position: relative; margin-bottom: 60px; }
-.tl-item:last-child { margin-bottom: 0; }
-
-.tl-dot {
-  position: absolute; left: -31px; top: 10px;
-  width: 18px; height: 18px; border-radius: 50%;
-  border: 2px solid var(--g); background: var(--bg);
-  box-shadow: 0 0 0 4px var(--bg), 0 0 14px rgba(0,230,118,.4);
-  transition: box-shadow .3s, transform .3s var(--spring);
-}
-.tl-item:hover .tl-dot {
-  box-shadow: 0 0 0 4px var(--bg), 0 0 26px rgba(0,230,118,.7);
-  transform: scale(1.2);
-}
-.tl-dot.big {
-  width: 22px; height: 22px; left: -33px;
-  background: var(--g); box-shadow: 0 0 0 4px var(--bg), 0 0 22px rgba(0,230,118,.65);
-}
-
-.tl-stage { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--g); margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
-.tl-age   { padding: 2px 9px; border-radius: 5px; background: var(--b1); font-size: 11px; color: var(--ml); font-weight: 500; letter-spacing: 0; text-transform: none; }
-.tl-title {
-  font-family: 'Unbounded', sans-serif;
-  font-size: clamp(17px, 2.2vw, 24px); font-weight: 700;
-  letter-spacing: -.5px; line-height: 1.2; margin-bottom: 10px;
-  transition: color .2s;
-}
-.tl-item:hover .tl-title { color: var(--g); }
-.tl-desc { font-size: 15.5px; color: var(--ml); line-height: 1.75; max-width: 580px; text-wrap: balance; }
 
 .path-reveal { margin-top: 80px; padding: 64px 0; text-align: center; position: relative; }
 .path-reveal::before {
@@ -394,6 +355,43 @@ section.sec { padding: 110px 0; }
 .pr-pre   { font-size: 15px; color: var(--ml); line-height: 1.8; max-width: 560px; margin: 0 auto 24px; letter-spacing: .2px; }
 .pr-title { font-family: 'Unbounded', sans-serif; font-size: clamp(32px, 5.5vw, 72px); font-weight: 900; letter-spacing: -2.5px; line-height: .95; margin-bottom: 16px; }
 .pr-sub   { font-size: 17px; color: var(--tx); font-weight: 500; max-width: 440px; margin: 0 auto; }
+
+/* ── БЭКГРАУНД ───────────────────────────────── */
+.bg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+.bg-card {
+  background: var(--s1); border: 1px solid var(--b1); border-radius: var(--r16);
+  padding: 32px; position: relative; overflow: hidden;
+  transition: border-color .3s, box-shadow .3s, transform .3s var(--spring);
+}
+.bg-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad); opacity: .6; }
+.bg-card:hover { border-color: var(--b2); box-shadow: 0 0 30px rgba(0,230,118,.08); transform: translateY(-3px); }
+.bg-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--g); margin-bottom: 14px; }
+.bg-title {
+  font-family: 'Unbounded', sans-serif; font-size: clamp(16px, 2vw, 19px); font-weight: 700;
+  letter-spacing: -.3px; line-height: 1.3; margin-bottom: 12px;
+}
+.bg-desc { font-size: 15px; color: var(--ml); line-height: 1.75; }
+
+/* ── КЕЙС ────────────────────────────────────── */
+.case-card {
+  background: var(--s1); border: 1px solid var(--b1); border-radius: var(--r24);
+  padding: 40px 48px; position: relative; overflow: hidden; margin-top: 8px;
+}
+.case-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad); }
+.case-label { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--g); margin-bottom: 16px; }
+.case-title {
+  font-family: 'Unbounded', sans-serif; font-size: clamp(18px, 2.6vw, 26px); font-weight: 800;
+  letter-spacing: -.5px; line-height: 1.3; margin-bottom: 24px;
+}
+.case-list { list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 640px; }
+.case-list li {
+  font-size: 15px; line-height: 1.75; color: var(--ml);
+  padding-left: 28px; position: relative;
+}
+.case-list li::before {
+  content: '✓'; position: absolute; left: 0; top: 0;
+  color: var(--g); font-weight: 700;
+}
 
 /* ── ПОЧЕМУ АРБИТРАЖ ─────────────────────────── */
 #why {
@@ -629,6 +627,8 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
     box-shadow: 0 0 24px rgba(0,230,118,.18), 0 10px 28px rgba(0,0,0,.45);
   }
   .hero-name    { font-size: clamp(38px, 12vw, 62px); letter-spacing: -2px; line-height: 1.05; }
+  .bg-grid { grid-template-columns: 1fr; gap: 16px; }
+  .case-card { padding: 28px 24px; }
   .honest-block { grid-template-columns: 1fr; grid-template-areas: "main" "video" "promise"; gap: 24px; padding: 28px 24px; }
   .honest-main, .honest-point--confident { max-width: none; }
   .honest-main {
@@ -653,7 +653,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   .faq-a p      { text-wrap: wrap; }
   .hero-role    { line-height: 1.5; letter-spacing: -.1px; }
   .hero-role .hr-break { display: block; }
-  .tl-desc      { text-wrap: wrap; }
+  .bg-desc      { text-wrap: wrap; }
   .why-lead, .sk-note, .honest-point--confident { text-wrap: wrap; }
   .why-lead { color: #b9d2c8; }
 }
@@ -679,7 +679,6 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
   }
   .sk-note--tilt { text-wrap: pretty; }
   .faq-a--salary { text-wrap: balance; }
-  .tl-desc--univ { text-wrap: pretty; }
   .why-lead {
     padding: 0 6px;
     margin-top: 6px;
@@ -733,8 +732,9 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
       </a>
       <div class="nav-links" role="list">
         <a href="#about"  class="nl" role="listitem">Обо мне</a>
-        <a href="#path"   class="nl" role="listitem">Путь</a>
+        <a href="#path"   class="nl" role="listitem">Бэкграунд</a>
         <a href="#why"    class="nl" role="listitem">Арбитраж</a>
+        <a href="#case"   class="nl" role="listitem">Кейс</a>
         <a href="#skills" class="nl" role="listitem">Навыки</a>
         <a href="#faq"    class="nl" role="listitem">FAQ</a>
         <a href="#goal"   class="nl" role="listitem">Цель</a>
@@ -752,8 +752,9 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
 </nav>
 <div class="mob pw" id="mob" role="dialog" aria-label="Мобильное меню">
   <a href="#about"  class="nl" onclick="closeMob()">Обо мне</a>
-  <a href="#path"   class="nl" onclick="closeMob()">Путь</a>
+  <a href="#path"   class="nl" onclick="closeMob()">Бэкграунд</a>
   <a href="#why"    class="nl" onclick="closeMob()">Арбитраж</a>
+  <a href="#case"   class="nl" onclick="closeMob()">Кейс</a>
   <a href="#skills" class="nl" onclick="closeMob()">Навыки</a>
   <a href="#faq"    class="nl" onclick="closeMob()">FAQ</a>
   <a href="#goal"   class="nl" onclick="closeMob()">Цель</a>
@@ -808,30 +809,22 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
 <section class="sec pw" id="path" aria-labelledby="path-heading">
   <div class="ctr">
     <div class="sec-head reveal">
-      <div class="eyebrow">Мой путь</div>
+      <div class="eyebrow">Бэкграунд</div>
       <h2 class="st" id="path-heading">
         От паблика по ставкам<br>до <span class="g-txt">медиабаинга</span>
       </h2>
     </div>
 
-    <div class="timeline" id="timeline" role="list">
-      <div class="tl-item reveal d1" role="listitem">
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-stage">Школа</div>
-        <div class="tl-title">Админ в крупной сетке ВК пабликов по ставкам на киберспорт</div>
-        <p class="tl-desc">С 7 по 11 класс, помимо учёбы, я админил крупную сеть VK-пабликов по ставкам на киберспорт: занимался контентом, рекламой и общением с клиентами самостоятельно.</p>
+    <div class="bg-grid">
+      <div class="bg-card reveal d1">
+        <div class="bg-label">Онлайн-работа</div>
+        <div class="bg-title">Админ паблика VK по ставкам на киберспорт <span class="g-txt">(7000+ активной аудитории)</span></div>
+        <p class="bg-desc">Более 4 лет вёл контент, рекламу и коммуникацию с аудиторией беттинг-сообщества&nbsp;&mdash;&nbsp;изнутри изучил, как мыслит и реагирует целевая аудитория беттинга.</p>
       </div>
-      <div class="tl-item reveal d2" role="listitem">
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-stage">Университет</div>
-        <div class="tl-title">Сознательный отказ в пользу саморазвития</div>
-        <p class="tl-desc tl-desc--univ">Сдал ЕГЭ, поступил на бюджет в РАНХиГС. Уже на первом курсе понял, что нас учат только бесполезной теории, далёкой от реальности. Сделал ставку на саморазвитие и ушёл по собственному желанию.</p>
-      </div>
-      <div class="tl-item reveal d3" role="listitem">
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-stage">Первая оффлайн работа</div>
-        <div class="tl-title">Менеджер по продажам техники Apple</div>
-        <p class="tl-desc">Работал менеджером по продажам техники Apple. Прокачал живую коммуникацию, умение закрывать возражения и вызывать доверие&nbsp;&mdash;&nbsp;получил практический опыт, который ценнее любой теории.</p>
+      <div class="bg-card reveal d2">
+        <div class="bg-label">Оффлайн-работа</div>
+        <div class="bg-title">Менеджер по продажам техники Apple</div>
+        <p class="bg-desc">Прокачал живую коммуникацию, отработку возражений и умение вызывать доверие у клиентов.</p>
       </div>
     </div>
 
@@ -851,6 +844,29 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
     <div class="why-grid">
       <h2 class="st" id="why-heading">Почему именно <span class="g-txt">арбитраж?</span></h2>
       <p class="why-lead">Деньги, свобода, крутое комьюнити&nbsp;&mdash;&nbsp;это конечно приятно. Но главный момент для меня&nbsp;&mdash;&nbsp;это самореализация. Уверен, что благодаря опытному тимлиду быстро стану <span class="g-txt">сильным медиабаером.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="divl pw" aria-hidden="true"></div>
+
+<!-- ════ КЕЙС ════ -->
+<section class="sec pw reveal" id="case" aria-labelledby="case-heading">
+  <div class="ctr">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Кейс</div>
+      <h2 class="st" id="case-heading">Первый самостоятельный <span class="g-txt">запуск</span></h2>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-label">Первый самостоятельный запуск, Facebook Ads</div>
+      <div class="case-title">Связка с нуля: 22bet + Kenya = <span class="g-txt">ROI 20%</span></div>
+      <ul class="case-list">
+        <li>Выбор оффера, сборка рабочей связки, настройка трекера и постбеков&nbsp;&mdash;&nbsp;всё самостоятельно</li>
+        <li>Через ИИ создал умную Excel-таблицу&nbsp;&mdash;&nbsp;сама считает целевые CPL/CPR/CPD под нужный ROI</li>
+        <li>Протестировал 9 креативов&nbsp;&mdash;&nbsp;выявил фаворит крео и масштабировал зацепившиеся адсеты выкрутом бюджета в рамках суток</li>
+        <li>92 FTD по CPA $7&nbsp;&mdash;&nbsp;итог $644 выручки, $537 расход, $107 чистой прибыли</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -890,7 +906,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         <div class="sk-col-head">Hard skills</div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15.5" y2="15.5"/><circle cx="8" cy="11" r="1.5" fill="#00e676" stroke="none"/><circle cx="12" cy="11" r="1.5" fill="#00e676" stroke="none"/><circle cx="10" cy="7.5" r="1.5" fill="#00e676" stroke="none"/><line x1="8" y1="11" x2="12" y2="11"/><line x1="8" y1="11" x2="10" y2="7.5"/><line x1="12" y1="11" x2="10" y2="7.5"/></svg></div>
-          <div><div class="sk-name">Аналитический склад ума</div><div class="sk-note">Анализировал конкурентов, матчи, поведение людей&nbsp;&mdash;&nbsp;вся жизнь один сплошной анализ.</div></div>
+          <div><div class="sk-name">Аналитический склад ума</div><div class="sk-note">Анализирую конкурентов, данные и поведение аудитории и применяю эти выводы в медиабаинге.</div></div>
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
@@ -906,7 +922,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
-          <div><div class="sk-name">Уверенное владение&nbsp;ИИ</div><div class="sk-note">Создание креативов, генерация идей&nbsp;&mdash;&nbsp;юзаю&nbsp;ИИ ежедневно.</div></div>
+          <div><div class="sk-name">Уверенное владение&nbsp;ИИ</div><div class="sk-note">Использую ИИ ежедневно: генерация идей, создание креативов и уникальных прелендингов, анализ данных.</div></div>
         </div>
       </div>
       <!-- SOFT -->
@@ -918,7 +934,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <div><div class="sk-name">Психологическая броня</div><div class="sk-note sk-note--tilt">Многолетний опыт ставок и игры в доту на высоком рейтинге выработали иммунитет к&nbsp;тильту&nbsp;:)</div></div>
+          <div><div class="sk-name">Психологическая броня</div><div class="sk-note sk-note--tilt">Спокойно реагирую на просадки и неудачи&nbsp;&mdash;&nbsp;не паникую и принимаю взвешенные решения.</div></div>
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
@@ -926,7 +942,7 @@ footer { border-top: 1px solid var(--b1); padding: 28px 0; text-align: center; f
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="13" y2="14"/></svg></div>
-          <div><div class="sk-name">Коммуникация</div><div class="sk-note">Прокачал навык в оффлайн-продажах.</div></div>
+          <div><div class="sk-name">Коммуникация</div><div class="sk-note">Развил навык живого общения и работы с возражениями в продажах.</div></div>
         </div>
         <div class="sk-item">
           <div class="sk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><polyline points="9 16 11 18 15 14"/></svg></div>
@@ -1034,7 +1050,7 @@ document.addEventListener('mousemove', e => {
 
 /* ── Навигация ── */
 const nav = document.getElementById('nav');
-const sections = ['about','path','why','skills','faq','goal'];
+const sections = ['about','path','why','case','skills','faq','goal'];
 let ticking = false;
 
 function onScroll() {
@@ -1069,17 +1085,6 @@ const io = new IntersectionObserver(entries => {
   });
 }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-/* ── Линия тайм-лайна ── */
-const tlEl = document.getElementById('timeline');
-if (tlEl) {
-  const tlObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('line-vis'); tlObs.unobserve(e.target); }
-    });
-  }, { threshold: .15 });
-  tlObs.observe(tlEl);
-}
 
 /* ── Счётчик цели ── */
 const goalNum = document.getElementById('goalNum');
